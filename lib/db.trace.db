@@ -1,0 +1,274 @@
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */ [42001-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Schema "TOKYO2021_E3" no encontrado
+Schema "TOKYO2021_E3" not found; SQL statement:
+USE `tokyo2021_e3` [90079-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.engine.Database.getSchema(Database.java:1546)
+	at org.h2.command.dml.Set.update(Set.java:397)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:188)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE `deportista` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `apellidos` varchar(45) NOT NULL,\000d\000a  `nombres` varchar(45) NOT NULL,\000d\000a  `email` varchar(100) NOT NULL,\000d\000a  `telefono` varchar(45) NOT NULL,\000d\000a  `id_pais` int(11) NOT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  KEY `fk_idx_pais_4_idx` (`id_pais`),\000d\000a  CONSTRAINT `fk_idx_pais_4` FOREIGN KEY (`id_pais`) REFERENCES `pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\000d\000a) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1"; se esperaba "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE `deportista` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `apellidos` varchar(45) NOT NULL,\000d\000a  `nombres` varchar(45) NOT NULL,\000d\000a  `email` varchar(100) NOT NULL,\000d\000a  `telefono` varchar(45) NOT NULL,\000d\000a  `id_pais` int(11) NOT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  KEY `fk_idx_pais_4_idx` (`id_pais`),\000d\000a  CONSTRAINT `fk_idx_pais_4` FOREIGN KEY (`id_pais`) REFERENCES `pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\000d\000a) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE `deportista` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `apellidos` varchar(45) NOT NULL,
+  `nombres` varchar(45) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `telefono` varchar(45) NOT NULL,
+  `id_pais` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_idx_pais_4_idx` (`id_pais`),
+  CONSTRAINT `fk_idx_pais_4` FOREIGN KEY (`id_pais`) REFERENCES `pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 [42001-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "--\000d\000a-- Dumping data for table `deportista`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `deportista` WRITE"
+Syntax error in SQL statement "--\000d\000a-- Dumping data for table `deportista`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `deportista` WRITE"; SQL statement:
+--
+-- Dumping data for table `deportista`
+--
+
+LOCK TABLES `deportista` WRITE [42000-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]UNLOCK TABLES"; se esperaba "UPDATE, USE"
+Syntax error in SQL statement "[*]UNLOCK TABLES"; expected "UPDATE, USE"; SQL statement:
+UNLOCK TABLES [42001-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE `deportista_en_disciplina` (\000d\000a  `id_deportista` int[*](11) NOT NULL,\000d\000a  `id_disciplina` int(11) NOT NULL,\000d\000a  PRIMARY KEY (`id_deportista`,`id_disciplina`),\000d\000a  KEY `columna_a_disciplina_idx` (`id_disciplina`),\000d\000a  CONSTRAINT `columna_a_deportista` FOREIGN KEY (`id_deportista`) REFERENCES `deportista` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,\000d\000a  CONSTRAINT `columna_a_disciplina` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=latin1"; se esperaba "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE `deportista_en_disciplina` (\000d\000a  `id_deportista` int[*](11) NOT NULL,\000d\000a  `id_disciplina` int(11) NOT NULL,\000d\000a  PRIMARY KEY (`id_deportista`,`id_disciplina`),\000d\000a  KEY `columna_a_disciplina_idx` (`id_disciplina`),\000d\000a  CONSTRAINT `columna_a_deportista` FOREIGN KEY (`id_deportista`) REFERENCES `deportista` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,\000d\000a  CONSTRAINT `columna_a_disciplina` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=latin1"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE `deportista_en_disciplina` (
+  `id_deportista` int(11) NOT NULL,
+  `id_disciplina` int(11) NOT NULL,
+  PRIMARY KEY (`id_deportista`,`id_disciplina`),
+  KEY `columna_a_disciplina_idx` (`id_disciplina`),
+  CONSTRAINT `columna_a_deportista` FOREIGN KEY (`id_deportista`) REFERENCES `deportista` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `columna_a_disciplina` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 [42001-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "--\000d\000a-- Dumping data for table `deportista_en_disciplina`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `deportista_en_disciplina` WRITE"
+Syntax error in SQL statement "--\000d\000a-- Dumping data for table `deportista_en_disciplina`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `deportista_en_disciplina` WRITE"; SQL statement:
+--
+-- Dumping data for table `deportista_en_disciplina`
+--
+
+LOCK TABLES `deportista_en_disciplina` WRITE [42000-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]UNLOCK TABLES"; se esperaba "UPDATE, USE"
+Syntax error in SQL statement "[*]UNLOCK TABLES"; expected "UPDATE, USE"; SQL statement:
+UNLOCK TABLES [42001-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE `disciplina` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `nombre` varchar(45) NOT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1"; se esperaba "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE `disciplina` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `nombre` varchar(45) NOT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE `disciplina` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 [42001-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "--\000d\000a-- Dumping data for table `disciplina`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `disciplina` WRITE"
+Syntax error in SQL statement "--\000d\000a-- Dumping data for table `disciplina`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `disciplina` WRITE"; SQL statement:
+--
+-- Dumping data for table `disciplina`
+--
+
+LOCK TABLES `disciplina` WRITE [42000-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DISCIPLINA" not found (this database is empty); SQL statement:
+INSERT INTO `disciplina` VALUES (1,'Arquería'),(2,'Gimnasia Artistica'),(3,'Atletismo'),(4,'Basketball'),(5,'Golf'),(6,'Nado Artistico'),(7,'Baseball'),(8,'Beach Volleyball'),(9,'Ciclismo'),(10,'Handball') [42104-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]UNLOCK TABLES"; se esperaba "UPDATE, USE"
+Syntax error in SQL statement "[*]UNLOCK TABLES"; expected "UPDATE, USE"; SQL statement:
+UNLOCK TABLES [42001-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE `pais` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `nombre` varchar(45) NOT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=latin1"; se esperaba "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE `pais` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `nombre` varchar(45) NOT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=latin1"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE `pais` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 [42001-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "--\000d\000a-- Dumping data for table `pais`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `pais` WRITE"
+Syntax error in SQL statement "--\000d\000a-- Dumping data for table `pais`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `pais` WRITE"; SQL statement:
+--
+-- Dumping data for table `pais`
+--
+
+LOCK TABLES `pais` WRITE [42000-214]
+2023-02-23 15:31:32 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]UNLOCK TABLES"; se esperaba "UPDATE, USE"
+Syntax error in SQL statement "[*]UNLOCK TABLES"; expected "UPDATE, USE"; SQL statement:
+UNLOCK TABLES [42001-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */ [42001-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Schema "TOKYO2021_E3" no encontrado
+Schema "TOKYO2021_E3" not found; SQL statement:
+USE `tokyo2021_e3` [90079-214]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:632)
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:477)
+	at org.h2.message.DbException.get(DbException.java:223)
+	at org.h2.message.DbException.get(DbException.java:199)
+	at org.h2.engine.Database.getSchema(Database.java:1546)
+	at org.h2.command.dml.Set.update(Set.java:397)
+	at org.h2.command.CommandContainer.update(CommandContainer.java:169)
+	at org.h2.command.Command.executeUpdate(Command.java:252)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:252)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:223)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1339)
+	at org.h2.server.web.WebApp.query(WebApp.java:1137)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1103)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1090)
+	at org.h2.server.web.WebThread.process(WebThread.java:188)
+	at org.h2.server.web.WebThread.run(WebThread.java:101)
+	at java.base/java.lang.Thread.run(Thread.java:1589)
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE `deportista` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `apellidos` varchar(45) NOT NULL,\000d\000a  `nombres` varchar(45) NOT NULL,\000d\000a  `email` varchar(100) NOT NULL,\000d\000a  `telefono` varchar(45) NOT NULL,\000d\000a  `id_pais` int(11) NOT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  KEY `fk_idx_pais_4_idx` (`id_pais`),\000d\000a  CONSTRAINT `fk_idx_pais_4` FOREIGN KEY (`id_pais`) REFERENCES `pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\000d\000a) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1"; se esperaba "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE `deportista` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `apellidos` varchar(45) NOT NULL,\000d\000a  `nombres` varchar(45) NOT NULL,\000d\000a  `email` varchar(100) NOT NULL,\000d\000a  `telefono` varchar(45) NOT NULL,\000d\000a  `id_pais` int(11) NOT NULL,\000d\000a  PRIMARY KEY (`id`),\000d\000a  KEY `fk_idx_pais_4_idx` (`id_pais`),\000d\000a  CONSTRAINT `fk_idx_pais_4` FOREIGN KEY (`id_pais`) REFERENCES `pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\000d\000a) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE `deportista` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `apellidos` varchar(45) NOT NULL,
+  `nombres` varchar(45) NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `telefono` varchar(45) NOT NULL,
+  `id_pais` int(11) NOT NULL,
+  PRIMARY KEY (`id`),
+  KEY `fk_idx_pais_4_idx` (`id_pais`),
+  CONSTRAINT `fk_idx_pais_4` FOREIGN KEY (`id_pais`) REFERENCES `pais` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1 [42001-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "--\000d\000a-- Dumping data for table `deportista`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `deportista` WRITE"
+Syntax error in SQL statement "--\000d\000a-- Dumping data for table `deportista`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `deportista` WRITE"; SQL statement:
+--
+-- Dumping data for table `deportista`
+--
+
+LOCK TABLES `deportista` WRITE [42000-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]UNLOCK TABLES"; se esperaba "UPDATE, USE"
+Syntax error in SQL statement "[*]UNLOCK TABLES"; expected "UPDATE, USE"; SQL statement:
+UNLOCK TABLES [42001-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE `deportista_en_disciplina` (\000d\000a  `id_deportista` int[*](11) NOT NULL,\000d\000a  `id_disciplina` int(11) NOT NULL,\000d\000a  PRIMARY KEY (`id_deportista`,`id_disciplina`),\000d\000a  KEY `columna_a_disciplina_idx` (`id_disciplina`),\000d\000a  CONSTRAINT `columna_a_deportista` FOREIGN KEY (`id_deportista`) REFERENCES `deportista` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,\000d\000a  CONSTRAINT `columna_a_disciplina` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=latin1"; se esperaba "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE `deportista_en_disciplina` (\000d\000a  `id_deportista` int[*](11) NOT NULL,\000d\000a  `id_disciplina` int(11) NOT NULL,\000d\000a  PRIMARY KEY (`id_deportista`,`id_disciplina`),\000d\000a  KEY `columna_a_disciplina_idx` (`id_disciplina`),\000d\000a  CONSTRAINT `columna_a_deportista` FOREIGN KEY (`id_deportista`) REFERENCES `deportista` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,\000d\000a  CONSTRAINT `columna_a_disciplina` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=latin1"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE `deportista_en_disciplina` (
+  `id_deportista` int(11) NOT NULL,
+  `id_disciplina` int(11) NOT NULL,
+  PRIMARY KEY (`id_deportista`,`id_disciplina`),
+  KEY `columna_a_disciplina_idx` (`id_disciplina`),
+  CONSTRAINT `columna_a_deportista` FOREIGN KEY (`id_deportista`) REFERENCES `deportista` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `columna_a_disciplina` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 [42001-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "--\000d\000a-- Dumping data for table `deportista_en_disciplina`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `deportista_en_disciplina` WRITE"
+Syntax error in SQL statement "--\000d\000a-- Dumping data for table `deportista_en_disciplina`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `deportista_en_disciplina` WRITE"; SQL statement:
+--
+-- Dumping data for table `deportista_en_disciplina`
+--
+
+LOCK TABLES `deportista_en_disciplina` WRITE [42000-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]UNLOCK TABLES"; se esperaba "UPDATE, USE"
+Syntax error in SQL statement "[*]UNLOCK TABLES"; expected "UPDATE, USE"; SQL statement:
+UNLOCK TABLES [42001-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE `disciplina` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `nombre` varchar(45) NOT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1"; se esperaba "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE `disciplina` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `nombre` varchar(45) NOT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE `disciplina` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=latin1 [42001-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "--\000d\000a-- Dumping data for table `disciplina`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `disciplina` WRITE"
+Syntax error in SQL statement "--\000d\000a-- Dumping data for table `disciplina`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `disciplina` WRITE"; SQL statement:
+--
+-- Dumping data for table `disciplina`
+--
+
+LOCK TABLES `disciplina` WRITE [42000-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "DISCIPLINA" not found (this database is empty); SQL statement:
+INSERT INTO `disciplina` VALUES (1,'Arquería'),(2,'Gimnasia Artistica'),(3,'Atletismo'),(4,'Basketball'),(5,'Golf'),(6,'Nado Artistico'),(7,'Baseball'),(8,'Beach Volleyball'),(9,'Ciclismo'),(10,'Handball') [42104-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]UNLOCK TABLES"; se esperaba "UPDATE, USE"
+Syntax error in SQL statement "[*]UNLOCK TABLES"; expected "UPDATE, USE"; SQL statement:
+UNLOCK TABLES [42001-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE TABLE `pais` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `nombre` varchar(45) NOT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=latin1"; se esperaba "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"
+Syntax error in SQL statement "CREATE TABLE `pais` (\000d\000a  `id` int[*](11) NOT NULL AUTO_INCREMENT,\000d\000a  `nombre` varchar(45) NOT NULL,\000d\000a  PRIMARY KEY (`id`)\000d\000a) ENGINE=InnoDB DEFAULT CHARSET=latin1"; expected "ARRAY, INVISIBLE, VISIBLE, NOT NULL, NULL, AS, DEFAULT, GENERATED, ON UPDATE, NOT NULL, NULL, AUTO_INCREMENT, DEFAULT ON NULL, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, COMMENT, PRIMARY KEY, UNIQUE, NOT NULL, NULL, CHECK, REFERENCES, AUTO_INCREMENT, ,, )"; SQL statement:
+CREATE TABLE `pais` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `nombre` varchar(45) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 [42001-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "--\000d\000a-- Dumping data for table `pais`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `pais` WRITE"
+Syntax error in SQL statement "--\000d\000a-- Dumping data for table `pais`\000d\000a--\000d\000a\000d\000a[*]LOCK TABLES `pais` WRITE"; SQL statement:
+--
+-- Dumping data for table `pais`
+--
+
+LOCK TABLES `pais` WRITE [42000-214]
+2023-02-23 15:31:49 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]UNLOCK TABLES"; se esperaba "UPDATE, USE"
+Syntax error in SQL statement "[*]UNLOCK TABLES"; expected "UPDATE, USE"; SQL statement:
+UNLOCK TABLES [42001-214]
+2023-02-23 16:01:03 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */ [42001-214]
+2023-02-23 16:01:16 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE  IF NOT EXISTS tokyo2021_e3 /*!40100 DEFAULT CHARACTER SET latin1 */"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE  IF NOT EXISTS tokyo2021_e3 /*!40100 DEFAULT CHARACTER SET latin1 */"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE  IF NOT EXISTS tokyo2021_e3 /*!40100 DEFAULT CHARACTER SET latin1 */ [42001-214]
+2023-02-23 16:01:16 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE  IF NOT EXISTS tokyo2021_e3 /*!40100 DEFAULT CHARACTER SET latin1 */"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE  IF NOT EXISTS tokyo2021_e3 /*!40100 DEFAULT CHARACTER SET latin1 */"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE  IF NOT EXISTS tokyo2021_e3 /*!40100 DEFAULT CHARACTER SET latin1 */ [42001-214]
+2023-02-23 16:02:37 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */ [42001-214]
+2023-02-23 16:02:52 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3`"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3`"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE  IF NOT EXISTS `tokyo2021_e3` [42001-214]
+2023-02-23 16:03:14 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE databasename"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE databasename"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE databasename [42001-214]
+2023-02-23 16:03:16 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE databasename"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE databasename"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE databasename [42001-214]
+2023-02-23 16:03:17 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE databasename"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE databasename"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE databasename [42001-214]
+2023-02-23 16:03:54 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; se esperaba "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"
+Syntax error in SQL statement "CREATE [*]DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; expected "OR REPLACE, FORCE, VIEW, ALIAS, SEQUENCE, USER, TRIGGER, ROLE, SCHEMA, CONSTANT, DOMAIN, TYPE, DATATYPE, AGGREGATE, LINKED, MEMORY, CACHED, LOCAL TEMPORARY, GLOBAL TEMPORARY, TEMP, TEMPORARY, TABLE, SYNONYM, UNIQUE, HASH, SPATIAL, INDEX"; SQL statement:
+CREATE DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */ [42001-214]
+2023-02-23 16:04:08 jdbc[7]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Error de Sintaxis en sentencia SQL "[*]FORCE DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"
+Syntax error in SQL statement "[*]FORCE DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */"; SQL statement:
+FORCE DATABASE  IF NOT EXISTS `tokyo2021_e3` /*!40100 DEFAULT CHARACTER SET latin1 */ [42000-214]
